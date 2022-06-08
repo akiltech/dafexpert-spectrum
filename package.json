@@ -10,10 +10,20 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "devDependencies": {
-    "eslint-config-custom": "latest",
+    "@commitlint/cli": "^17.0.2",
+    "commitizen": "^4.2.4",
+    "commitlint-config-gitmoji": "^2.2.5",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.17.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
     "prettier": "latest",
     "turbo": "latest"
   },
@@ -22,5 +32,21 @@
     "node": ">=14.0.0"
   },
   "dependencies": {},
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.17",
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/cra-template-akilcab/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  }
 }
