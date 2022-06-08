@@ -6,5 +6,8 @@ module.exports = {
     next: {
       rootDir: ["apps/*/"],
     },
+    "import/resolver": {
+      "typescript": {}
+    }
   },
 };
