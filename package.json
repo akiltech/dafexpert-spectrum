@@ -31,7 +31,9 @@
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-dom": "^18.1.0"
+  },
   "packageManager": "yarn@1.22.17",
   "config": {
     "commitizen": {
